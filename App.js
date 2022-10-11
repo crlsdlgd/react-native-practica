@@ -1,20 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Text, View, StyleSheet, Image, TouchableOpacity, Alert } from "react-native";
+import image from './assets/diamon_red.jpg';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={style.container}>
+      <Text style={style.title}>Hello world!</Text>
+      <Image style={style.image} source={image}/>
+      <TouchableOpacity 
+        onPress={()=> Alert.alert('Hola!')}
+        style={style.button}
+      >
+        <Text style={style.buttonText}>Press me</Text>
+      </TouchableOpacity>
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#292929'
   },
+  title: { fontSize: 30, color: '#fff' },
+  image: { height:200, width:200, borderRadius: 100},
+  button: { 
+    backgroundColor: 'blue', 
+    padding: 10,
+    marginTop: 10,
+    height:80, width:80, borderRadius: 40
+  },
+  buttonText:{
+    color:'#fff',
+    fontSize: 20,
+  }
 });
+
+export default App;
