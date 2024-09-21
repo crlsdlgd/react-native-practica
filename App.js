@@ -16,7 +16,7 @@ const App = () => {
     </View>
   );
 };
-
+// hola carlitos
 const style = StyleSheet.create({
   container: {
     flex: 1,
